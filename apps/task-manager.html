@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task Manager</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:22px;color:#d9dedb;background:#10171d;font:12px "Segoe UI",Arial,sans-serif}h1{margin:0 0 7px;font-size:23px;font-weight:400}p{margin:0 0 20px;color:#929ca0;font-size:10px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}.metric{padding:14px;border:1px solid #36443f;background:#151e22}.metric span{display:block;color:#9daaa0;font-size:9px}.metric strong{display:block;margin-top:8px;color:#73d8cb;font:18px "Courier New",monospace}table{width:100%;border-collapse:collapse;font-size:10px}th,td{padding:10px;text-align:left;border-bottom:1px solid #29342f}th{color:#d2a85e;font:9px "Courier New",monospace}button{padding:6px 9px;border:1px solid #594d39;color:#e4c78d;background:#24251f;cursor:pointer}.status{color:#78c785}@media(max-width:500px){.metrics{grid-template-columns:1fr}td:nth-child(3),th:nth-child(3){display:none}}
+</style>
+</head>
+<body><h1>Task Manager</h1><p>PROCESS MONITOR · BROWSER PREVIEW DATA</p><div class="metrics"><div class="metric"><span>CPU</span><strong id="cpu">24%</strong></div><div class="metric"><span>MEMORY</span><strong id="memory">5.8 GB</strong></div><div class="metric"><span>PROCESSES</span><strong id="count">4</strong></div></div><table><thead><tr><th>PROCESS</th><th>STATUS</th><th>CPU</th><th>ACTION</th></tr></thead><tbody id="processes"><tr><td>Zhaalthur Shell</td><td class="status">Running</td><td>4.2%</td><td>—</td></tr><tr><td>File Explorer</td><td class="status">Running</td><td>1.8%</td><td><button>End task</button></td></tr><tr><td>System Settings</td><td class="status">Running</td><td>0.9%</td><td><button>End task</button></td></tr><tr><td>Desktop Renderer</td><td class="status">Running</td><td>3.1%</td><td><button>End task</button></td></tr></tbody></table><script>document.getElementById("processes").addEventListener("click",e=>{if(!e.target.matches("button"))return;e.target.closest("tr").remove();document.getElementById("count").textContent=document.querySelectorAll("#processes tr").length});setInterval(()=>{document.getElementById("cpu").textContent=(18+Math.floor(Math.random()*22))+"%";document.getElementById("memory").textContent=(5.2+Math.random()*1.4).toFixed(1)+" GB"},1800)</script></body>
+</html>
